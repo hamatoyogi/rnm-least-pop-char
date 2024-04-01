@@ -2,8 +2,8 @@ export const CharacterProfile = (props: { character: Character }) => {
   const { character } = props;
   return (
     <section className="h-full flex flex-col items-center justify-end pb-20">
-      <article className="card lg:card-side glass shadow-xl text-white">
-        <figure className="m-10">
+      <article className="card lg:card-side glass shadow-xl text-purple-700">
+        <figure>
           <img
             // width={768}
             // height={768}
@@ -21,13 +21,25 @@ export const CharacterProfile = (props: { character: Character }) => {
           <div>
             <div>
               <p>
-                <b>Origin:</b> {character.origin.name}
+                <b className="font-schwifty">Origin:</b> {character.origin.name}
               </p>
-              <p>Dimension: {character.location.name}</p>
-              <p>Status: {character.status}</p>
-              <p>Species: {character.species}</p>
-              <p>Gender: {character.gender}</p>
-              <p>Popularity (episodes): {character.episode.length}</p>
+              <p>
+                <b className="font-schwifty">Dimension:</b>{' '}
+                {character.location.name}
+              </p>
+              <p>
+                <b className="font-schwifty">Status:</b> {character.status}
+              </p>
+              <p>
+                <b className="font-schwifty">Species:</b> {character.species}
+              </p>
+              <p>
+                <b className="font-schwifty">Gender:</b> {character.gender}
+              </p>
+              <p>
+                <b className="font-schwifty">Popularity (episodes):</b>{' '}
+                {character.episode.length}
+              </p>
             </div>
           </div>
         </div>

@@ -14,6 +14,9 @@ export const Background = () => {
             Rick<span>and </span>Morty
           </div>
         </div>
+        <h1 className="text-6xl font-schwifty text-slate-700">
+          Least popular character
+        </h1>
       </div>
     </div>
   );
