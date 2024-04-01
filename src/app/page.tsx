@@ -1,46 +1,12 @@
-import Image from 'next/image';
-import { Background } from './components/background/background';
+import { Heading } from './components/background/background';
 import { CharacterProfile } from './components/character-profile';
-
-const BASE_URL = 'https://rickandmortyapi.com/api';
-
-// Todo use types
-// Todo use URL search params to build the URL
-
-const getLeastPopularCharacter = async () => {
-  // get all characters from Earth C-137
-  const locationResponse = await fetch(`${BASE_URL}/location/1`);
-  const location: LocationResponse = await locationResponse.json();
-
-  const residents = location.residents;
-  const characterIds = residents.map((url) => url.split('/character/').pop());
-
-  // get all characters from Earth C-137 in one request
-  const characterResponse = await fetch(
-    `${BASE_URL}/character/${characterIds.join(',')}`
-  );
-  const charactersJson: CharactersResponse = await characterResponse.json();
-
-  const leastPopularCharacters = charactersJson
-    // least popular characters would be in only one episode
-    .filter((character) => character.episode.length === 1)
-    // If more than one character fits the least popular character definition
-    // - sort the list by name in ascending alphabet order and show the last one.
-    .sort((a, b) => {
-      if (a.name < b.name) {
-        return -1;
-      }
-      return 0;
-    });
-
-  return leastPopularCharacters[leastPopularCharacters.length - 1];
-};
+import { getLeastPopularCharacter } from './utils';
 
 export default async function Home() {
   const character = await getLeastPopularCharacter();
   return (
     <main className="h-dvh">
-      <Background />
+      <Heading />
       <CharacterProfile character={character} />
     </main>
   );

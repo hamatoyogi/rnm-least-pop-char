@@ -1,8 +1,8 @@
 export const CharacterProfile = (props: { character: Character }) => {
   const { character } = props;
   return (
-    <section className="h-full flex flex-col items-center justify-end pb-20">
-      <article className="card lg:card-side glass shadow-xl text-purple-700">
+    <section className="flex flex-col items-center pb-20">
+      <article className="card md:card-side glass shadow-xl text-purple-700">
         <figure>
           <img
             // width={768}
