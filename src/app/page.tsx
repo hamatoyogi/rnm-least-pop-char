@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Background } from './components/background/background';
+import { CharacterProfile } from './components/character-profile';
 
 const BASE_URL = 'https://rickandmortyapi.com/api';
 
@@ -40,34 +41,7 @@ export default async function Home() {
   return (
     <main className="h-dvh">
       <Background />
-      <section className="h-full flex flex-col items-center justify-end pb-20">
-        {/* <h1 className="text-4xl font-bold m-10">Least Popular Character</h1> */}
-        <article className="card lg:card-side glass bg-base-100 shadow-xl">
-          <figure className="m-10">
-            <img
-              // width={768}
-              // height={768}
-              src={character.image}
-              alt={character.name}
-            />
-          </figure>
-          <div className="card-body">
-            <h2 key={character.id} className="card-title">
-              {character.name}
-            </h2>
-            <div>
-              <p>
-                <b>Origin:</b> {character.origin.name}
-              </p>
-              <p>Dimension: {character.location.name}</p>
-              <p>Status: {character.status}</p>
-              <p>Species: {character.species}</p>
-              <p>Gender: {character.gender}</p>
-              <p>Popularity (episodes): {character.episode.length}</p>
-            </div>
-          </div>
-        </article>
-      </section>
+      <CharacterProfile character={character} />
     </main>
   );
 }

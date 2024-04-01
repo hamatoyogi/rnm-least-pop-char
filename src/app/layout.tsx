@@ -8,7 +8,10 @@ import { Background } from './components/background/background';
 
 // Font files can be colocated inside of `app`
 // https://nextjs.org/docs/app/building-your-application/optimizing/fonts#local-fonts
-const myFont = localFont({ src: './get-schwifty.woff' });
+const schwiftyFont = localFont({
+  src: './get-schwifty.woff',
+  variable: '--font-schwifty',
+});
 
 export const metadata: Metadata = {
   title: 'R&M Least Popular Character',
@@ -22,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={myFont.className}>{children}</body>
+      <body className={schwiftyFont.variable}>{children}</body>
     </html>
   );
 }
