@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Background } from './components/background';
+import { Background } from './components/background/background';
 
 const BASE_URL = 'https://rickandmortyapi.com/api';
 
@@ -42,7 +42,7 @@ export default async function Home() {
       <Background />
       <section className="h-full flex flex-col items-center justify-end pb-20">
         {/* <h1 className="text-4xl font-bold m-10">Least Popular Character</h1> */}
-        <article className="card lg:card-side bg-base-100 shadow-xl">
+        <article className="card lg:card-side glass bg-base-100 shadow-xl">
           <figure className="m-10">
             <img
               // width={768}
