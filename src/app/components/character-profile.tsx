@@ -24,7 +24,7 @@ export const CharacterProfile = (props: { character: Character }) => {
                 <b className="font-schwifty">Origin:</b> {character.origin.name}
               </p>
               <p>
-                <b className="font-schwifty">Dimension:</b>{' '}
+                <b className="font-schwifty">Dimension:</b>
                 {character.location.name}
               </p>
               <p>

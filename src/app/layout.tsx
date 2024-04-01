@@ -1,10 +1,9 @@
 import type { Metadata } from 'next';
 
 import './globals.css';
-import './components/background/background.css';
+import './components/heading/heading.css';
 
 import localFont from 'next/font/local';
-import { Background } from './components/background/background';
 
 // Font files can be colocated inside of `app`
 // https://nextjs.org/docs/app/building-your-application/optimizing/fonts#local-fonts
