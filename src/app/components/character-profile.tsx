@@ -9,11 +9,12 @@ export const CharacterProfile = (props: { character: Character }) => {
             // height={768}
             src={character.image}
             alt={character.name}
+            loading="eager"
           />
         </figure>
         <div className="card-body">
           <div>
-            <p className="font-schwifty">Name:</p>
+            <p>Name:</p>
             <h2 key={character.id} className="card-title">
               {character.name}
             </h2>
@@ -21,24 +22,23 @@ export const CharacterProfile = (props: { character: Character }) => {
           <div>
             <div>
               <p>
-                <b className="font-schwifty">Origin:</b> {character.origin.name}
+                <b>Origin:</b> {character.origin.name}
               </p>
               <p>
-                <b className="font-schwifty">Dimension:</b>
+                <b>Dimension:</b>
                 {character.location.name}
               </p>
               <p>
-                <b className="font-schwifty">Status:</b> {character.status}
+                <b>Status:</b> {character.status}
               </p>
               <p>
-                <b className="font-schwifty">Species:</b> {character.species}
+                <b>Species:</b> {character.species}
               </p>
               <p>
-                <b className="font-schwifty">Gender:</b> {character.gender}
+                <b>Gender:</b> {character.gender}
               </p>
               <p>
-                <b className="font-schwifty">Popularity (episodes):</b>{' '}
-                {character.episode.length}
+                <b>Popularity (episodes):</b> {character.episode.length}
               </p>
             </div>
           </div>

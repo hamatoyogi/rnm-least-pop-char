@@ -4,7 +4,7 @@
   text-align: center;
   font-size: 10em;
   color: #08bae3;
-  z-index: 50;
+  z-index: 20;
   -webkit-text-stroke: 1px rgba(0, 0, 0, 0.5);
 }
 .rnm-title span {
@@ -13,12 +13,12 @@
 
 .rnm-title.rnm-middle {
   -webkit-text-stroke: 0.1em #fff765;
-  z-index: 49;
+  z-index: 19;
 }
 
 .rnm-title.rnm-bottom {
   -webkit-text-stroke: 0.4em black;
-  z-index: 48;
+  z-index: 18;
 }
 
 .rnm-portal {
