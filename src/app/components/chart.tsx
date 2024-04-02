@@ -28,11 +28,12 @@ export const Chart = ({
               >
                 <div
                   key={entry.name}
-                  className="w-full"
+                  className="w-full tooltip hover:cursor-pointer"
                   style={{
                     height: `${entry.episodeCount}%`,
                     backgroundColor: colorMap[entry.name],
                   }}
+                  data-tip={`${entry.name}: ${entry.episodeCount}`}
                 ></div>
               </div>
               <h3 className="text-center h-fit">{entry.name}</h3>
