@@ -61,18 +61,13 @@ export const getChartCharacters = async () => {
 
 const parseCharacterResToChartData = (res: Array<APIResponse>) => {
   return res.map(({ results }) => {
-    const allUniqueEpisodes = [
-      ...new Set<string>(
-        results.reduce((acc: Array<string>, { episode }) => {
-          acc = [...acc, ...episode];
-          return acc;
-        }, [])
-      ),
+    const uniqueEpisodes = [
+      ...new Set<string>(results.flatMap(({ episode }) => episode)),
     ];
 
     return {
       name: results[0].name,
-      episodeCount: allUniqueEpisodes.length,
+      episodeCount: uniqueEpisodes.length,
     };
   });
 };
