@@ -56,16 +56,14 @@ export const getChartCharacters = async () => {
     )
   );
 
-  return parseRes(charectersRes);
+  return parseCharacterResToChartData(charectersRes);
 };
 
-const parseRes = (res: Array<APIResponse>) => {
+const parseCharacterResToChartData = (res: Array<APIResponse>) => {
   return res.map(({ results }) => {
     const allUniqueEpisodes = [
-      // @ts-expect-error
-      ...new Set<Array<string>>(
-        results.reduce((acc, { episode }) => {
-          // @ts-expect-error
+      ...new Set<string>(
+        results.reduce((acc: Array<string>, { episode }) => {
           acc = [...acc, ...episode];
           return acc;
         }, [])
