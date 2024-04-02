@@ -1,5 +1,4 @@
 import { Fragment } from 'react';
-import './chart.css';
 
 const colors = ['#08bae3', '#fff765', '#448c3f', 'rebeccapurple', 'hotpink'];
 
@@ -16,8 +15,11 @@ export const Chart = ({
   return (
     <div className="flex flex-col items-center w-full">
       <h1 className="font-schwifty text-7xl my-20">Popularity Chart</h1>
-      <section className="flex">
-        <div className="h-[60vh] grid grid-cols-5 gap-4">
+      <section className="flex gap-20 items-end">
+        <div
+          className="h-full grid grid-cols-5 gap-4"
+          style={{ gridTemplateRows: '300px 1rem' }}
+        >
           {data.map((entry) => (
             <Fragment key={entry.name}>
               <div
@@ -37,7 +39,7 @@ export const Chart = ({
             </Fragment>
           ))}
         </div>
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-10 border border-gray-400 rounded-md p-4">
           <h2 className="text-3xl">Legend</h2>
           <ul>
             {data.map((entry) => (

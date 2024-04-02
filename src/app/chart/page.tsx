@@ -1,4 +1,4 @@
-import { Chart } from '../components/chart/chart';
+import { Chart } from '../components/chart';
 import { getChartCharacters } from '../utils';
 
 const ChartPage = async () => {

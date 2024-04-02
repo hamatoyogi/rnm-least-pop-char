@@ -1,6 +1,8 @@
+import './heading.css';
+
 export const Heading = () => {
   return (
-    <>
+    <header>
       <div className="rnm-portal"></div>
       <div className="w-full grid gap-4 place-items-center">
         <div className="w-full font-schwifty">
@@ -18,6 +20,6 @@ export const Heading = () => {
           Least popular character
         </h1>
       </div>
-    </>
+    </header>
   );
 };
