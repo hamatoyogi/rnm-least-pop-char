@@ -27,7 +27,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={schwiftyFont.variable}>{children}</body>
       <div className="btm-nav">
-        <Link className="" href="/">
+        <Link href="/">
           <button>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +45,7 @@ export default function RootLayout({
             </svg>
           </button>
         </Link>
-        <Link className="" href="/chart">
+        <Link href="/chart">
           <button>
             <svg
               xmlns="http://www.w3.org/2000/svg"
