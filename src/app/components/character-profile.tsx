@@ -1,16 +1,20 @@
+// opted out of using Image component from next.js due to styling issues
+// import Image from 'next/image';
+
 export const CharacterProfile = (props: { character: Character }) => {
   const { character } = props;
   return (
     <section className="flex flex-col items-center pb-20">
       <article className="card md:card-side glass shadow-xl text-purple-700">
         <figure>
-          <img
-            // width={768}
-            // height={768}
+          <img src={character.image} alt={character.name} loading="eager" />
+          {/* <Image
+            width={300}
+            height={300}
             src={character.image}
             alt={character.name}
             loading="eager"
-          />
+          /> */}
         </figure>
         <div className="card-body">
           <div>
