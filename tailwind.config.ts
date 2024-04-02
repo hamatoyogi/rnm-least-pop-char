@@ -21,11 +21,11 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       animation: {
-        'swirl-spin': 'swirl-in-fwd 0.7s ease-out 0.2s both;',
+        'swirl-spin': 'swirl-in-fwd 0.7s ease-out 0.7s both;',
         'tracking-in-expand':
-          'tracking-in-expand-fwd 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) 1s both',
+          'tracking-in-expand-fwd 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) 1.5s both',
         'puff-in-center':
-          'puff-in-center 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 2s both',
+          'puff-in-center 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) 2.5s both',
         flicker: 'flicker 2s infinite both',
       },
       keyframes: {
