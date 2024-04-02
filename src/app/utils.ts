@@ -2,7 +2,11 @@ const BASE_URL = 'https://rickandmortyapi.com/api';
 
 export const getLeastPopularCharacter = async () => {
   // get all characters from Earth C-137
-  const locationResponse = await fetch(`${BASE_URL}/location/1`);
+  const locationResponse = await fetch(`${BASE_URL}/location/1`).catch(
+    (error) => {
+      throw new Error('error fetching from RnM API!!!');
+    }
+  );
   const location: LocationResponse = await locationResponse.json();
 
   const residents = location.residents;
@@ -12,7 +16,9 @@ export const getLeastPopularCharacter = async () => {
   // get all characters from Earth C-137 in one request
   const characterResponse = await fetch(
     `${BASE_URL}/character/${characterIds.join(',')}`
-  );
+  ).catch((error) => {
+    throw new Error('error fetching from RnM API!!!');
+  });
   const charactersJson: CharactersResponse = await characterResponse.json();
 
   const leastPopularCharacters = charactersJson
@@ -28,4 +34,47 @@ export const getLeastPopularCharacter = async () => {
     });
 
   return leastPopularCharacters[leastPopularCharacters.length - 1];
+};
+
+const getCharacterByName = async (name: string) => {
+  return fetch(`${BASE_URL}/character/?name=${name}`).catch((error) => {
+    throw new Error('error fetching from RnM API!!!');
+  });
+};
+
+export const getChartCharacters = async () => {
+  const characterNames = [
+    'Abradolf Lincler',
+    'Arcade Alien',
+    'Morty Smith',
+    'Birdperson',
+    'Mr. Meeseeks',
+  ];
+  const charectersRes = await Promise.all(
+    characterNames.map((name) =>
+      getCharacterByName(name).then((res) => res.json())
+    )
+  );
+
+  return parseRes(charectersRes);
+};
+
+const parseRes = (res: Array<APIResponse>) => {
+  return res.map(({ results }) => {
+    const allUniqueEpisodes = [
+      // @ts-expect-error
+      ...new Set<Array<string>>(
+        results.reduce((acc, { episode }) => {
+          // @ts-expect-error
+          acc = [...acc, ...episode];
+          return acc;
+        }, [])
+      ),
+    ];
+
+    return {
+      name: results[0].name,
+      episodeCount: allUniqueEpisodes.length,
+    };
+  });
 };

@@ -31,9 +31,14 @@ type Character = {
     url: string;
   };
   image: string;
-  episode: string[];
+  episode: Array<string>;
   url: string;
   created: string;
 };
 
-type CharactersResponse = Character[];
+type CharactersResponse = Array<Character>;
+
+type APIResponse = {
+  info: ResInfo;
+  results: CharactersResponse;
+};

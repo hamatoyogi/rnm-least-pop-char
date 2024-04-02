@@ -1,8 +1,13 @@
-const ChartPage = () => {
+import { Chart } from '../components/chart/chart';
+import { getChartCharacters } from '../utils';
+
+const ChartPage = async () => {
+  const data = await getChartCharacters();
+  console.log({ data });
+
   return (
     <main>
-      <h1>Chart</h1>
-      <p>This is a chart page.</p>
+      <Chart data={data} />
     </main>
   );
 };
