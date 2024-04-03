@@ -4,9 +4,9 @@ export const Heading = ({ className }: { className?: string }) => {
   return (
     <header className={className}>
       <div className="rnm-portal slide-in-elliptic-top-fwd"></div>
-      <div className="w-full grid gap-4 place-items-center">
-        <div className="w-full font-schwifty transition-all will-change-auto animate-swirl-spin">
-          <div className="rnm-title relative h-fit mt-10">
+      <div className="grid w-full place-items-center gap-4">
+        <div className="w-full animate-swirl-spin font-schwifty transition-all will-change-auto">
+          <div className="rnm-title relative mt-10 h-fit">
             Rick<span>and </span>Morty
           </div>
           <div className="rnm-title rnm-middle absolute mt-10">
@@ -16,7 +16,7 @@ export const Heading = ({ className }: { className?: string }) => {
             Rick<span>and </span>Morty
           </div>
         </div>
-        <h1 className="my-10 text-3xl md:text-6xl z-10 font-schwifty text-pink-400 md:text-slate-700 transition-all animate-tracking-in-expand">
+        <h1 className="z-10 my-10 animate-tracking-in-expand font-schwifty text-3xl text-pink-400 transition-all md:text-6xl md:text-slate-700">
           Least popular character
         </h1>
       </div>
