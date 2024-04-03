@@ -1,6 +1,6 @@
 import './heading.css';
 
-export const Heading = ({ className }: { className: string }) => {
+export const Heading = ({ className }: { className?: string }) => {
   return (
     <header className={className}>
       <div className="rnm-portal slide-in-elliptic-top-fwd"></div>
