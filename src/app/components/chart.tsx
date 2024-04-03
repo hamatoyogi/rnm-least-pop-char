@@ -28,7 +28,7 @@ export const Chart = ({
               >
                 <div
                   key={entry.name}
-                  className="w-full tooltip hover:cursor-pointer"
+                  className="w-full tooltip hover:cursor-pointer hover:opacity-80"
                   style={{
                     height: `${entry.episodeCount}%`,
                     backgroundColor: colorMap[entry.name],
