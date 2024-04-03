@@ -6,6 +6,9 @@
   color: #08bae3;
   z-index: 20;
   -webkit-text-stroke: 1px rgba(0, 0, 0, 0.5);
+  @media (max-width: 768px) {
+    font-size: 3.5em;
+  }
 }
 .rnm-title span {
   font-size: 0.5em;
@@ -25,10 +28,9 @@
   position: absolute;
   background-color: #66ba4f;
   box-shadow: 0px 0px 40px 10px #448c3f;
-  height: 100vh;
-  width: 100vw;
+  height: 100dvh;
+  width: 100dvw;
   border-radius: 50%;
-  margin: auto;
   background: radial-gradient(circle at 77% 80%, #fdfeb4 2.5%, transparent 2.5%),
     radial-gradient(circle at 75% 83%, #fdfeb4 2%, transparent 2%),
     radial-gradient(circle at 79% 83%, #fdfeb4 1%, transparent 1%),
@@ -62,7 +64,8 @@
 }
 
 .slide-in-elliptic-top-fwd {
-	animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
 }
 @keyframes slide-in-elliptic-top-fwd {
   0% {

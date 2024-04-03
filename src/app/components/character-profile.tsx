@@ -1,9 +1,9 @@
-import Image from 'next/image';
+import Image from "next/image";
 
 export const CharacterProfile = (props: { character: Character }) => {
   const { character } = props;
   return (
-    <section className="flex flex-col items-center">
+    <section className="flex flex-col items-center pb-20">
       <article className="card md:card-side glass shadow-xl text-purple-700 transition-all will-change-auto animate-puff-in-center transform-gpu">
         <figure className="h-[300px] w-[300px] relative">
           <Image

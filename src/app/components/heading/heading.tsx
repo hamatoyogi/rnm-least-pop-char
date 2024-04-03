@@ -16,7 +16,7 @@ export const Heading = ({ className }: { className?: string }) => {
             Rick<span>and </span>Morty
           </div>
         </div>
-        <h1 className="my-10 text-6xl z-10 font-schwifty text-slate-700 transition-all animate-tracking-in-expand">
+        <h1 className="my-10 text-3xl md:text-6xl z-10 font-schwifty text-pink-400 md:text-slate-700 transition-all animate-tracking-in-expand">
           Least popular character
         </h1>
       </div>
