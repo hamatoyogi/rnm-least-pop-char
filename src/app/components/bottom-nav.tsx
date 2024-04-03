@@ -3,7 +3,7 @@ import Link from 'next/link';
 export const BottomNav = () => (
   <footer className="btm-nav">
     <Link href="/">
-      <button>
+      <button aria-label="home">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-5 w-5"
@@ -21,7 +21,7 @@ export const BottomNav = () => (
       </button>
     </Link>
     <Link href="/chart">
-      <button>
+      <button aria-label="chart">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-5 w-5"
